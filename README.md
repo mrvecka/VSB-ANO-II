@@ -9,7 +9,7 @@ We introduce 2 aproaches how the goal can be achieved.
 We use sobel operator with kernel (3,3) to exctract vertical lines, then we use binary treshold. Count of non-zero pixels from result is our edge between occupied or free spot. Separately save counts for occupied and free spots. When all parking spots were processed, take lowest value from occupied spots and the heighes from free spots and make an average. The result is our final edge which will be used in test phase to determine if parking spot is occupied or not.
 
 ### Prerequisites
-https://sourceforge.net/projects/opencvlibrary/
+
 Download OpenCV from [OpenCV library](https://sourceforge.net/projects/opencvlibrary/) and include libraries to project
 
 Unzip the dataset.zip
@@ -18,14 +18,14 @@ Unzip the dataset.zip
 
 **Accuracy:** 93.37%
 
-![example 1](/images/logo.png)
-![example 2](/images/logo.png)
+![example 1](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
+![example 2](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
 
 ## Approach 2 - Classification using CNN and Tensorflow
 
 We want to classify if parking spot is occupied or not, this is like made for NN classification. The base of second solution is convolutional neural network designed in Tensorflow framework with OpenCV for image pre-process. On input there is 1(grayscale) or 3(RGB) channels input image. We designed following NN:
 
-![network architecture](/images/logo.png)
+![network architecture](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
 
 We use softmax_cross_entropy_with_logits to get the network error and AdamOptimizer for gradient distribution with **0.001** learning rate.
 
@@ -41,7 +41,7 @@ Unzip the dataset.zip
 
 **Accuracy:** 99.25%
 
-![example 1](/images/logo.png)
-![example 2](/images/logo.png)
+![example 1](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
+![example 2](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
 
 
