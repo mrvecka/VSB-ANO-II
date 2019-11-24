@@ -31,16 +31,16 @@ def convolution_layer_with_relu(input_data, num_input_chanels, num_output_channe
     bias = init_bias([num_output_channels],name)
 
     # setup the convolutional layer network
-    out_layer = tf.nn.conv2d(input_data, weights, strides=[1, stride, stride, 1], padding='SAME')
+    out_layer = tf.nn.conv2d(input_data, weights, strides=[1, stride, stride, 1], padding='SAME',name=name + '_convolution')
 
     # add bias
-    out_layer = tf.add(out_layer, bias)
+    out_layer = tf.add(out_layer, bias, name=name + '_add_bias')
 
     # normalization
     # out_layer = tf.layers.batch_normalization(out_layer,training=is_training)
 
     # apply a relu non-linea activation
-    out_layer = tf.nn.relu(out_layer)
+    out_layer = tf.nn.relu(out_layer,name=name + '_relu')
     
     if use_maxPool:
         # perform max pooling
@@ -53,7 +53,7 @@ def fully_connected_layer(input_layer, size, name):
     input_size = int(input_layer.get_shape()[1])
     W = init_weights([input_size,size], name)
     b = init_bias([size], name)
-    return tf.add(tf.matmul(input_layer,W), b)
+    return tf.add(tf.matmul(input_layer, W, name=name + '_weights_matmul_op'), b, name=name + '_bias_add_op')
 
 def dropout_layer(input_layer, hold_prob, name):  
     full_dropout = tf.nn.dropout(input_layer,keep_prob=hold_prob, name=name)
@@ -76,7 +76,7 @@ def create_classification_network(image_placeholder, hold_prob, training):
     net = tf.reshape(net, [-1, net.get_shape()[1]*net.get_shape()[2]*net.get_shape()[3]])
     
     net = fully_connected_layer(net, cfg.FULLY_CONNECTED_LAYER_SIZE, "fully_connected_1")
-    net = tf.nn.relu(net)
+    net = tf.nn.relu(net, name='fully_connected_1_relu')
     # net = normalize_data(net, training)
 
     net = dropout_layer(net, hold_prob, "dropout_1")
