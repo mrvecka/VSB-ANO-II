@@ -18,14 +18,14 @@ Unzip the dataset.zip
 
 **Accuracy:** 93.37%
 
-![example 1](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
-![example 2](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
+![Sobel operator example](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/example_sobel_1.jpg)
+![Sobel operator example 2](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/example_sobel_2.jpg)
 
 ## Approach 2 - Classification using CNN and Tensorflow
 
 We want to classify if parking spot is occupied or not, this is like made for NN classification. The base of second solution is convolutional neural network designed in Tensorflow framework with OpenCV for image pre-process. On input there is 1(grayscale) or 3(RGB) channels input image. We designed following NN:
 
-![network architecture](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
+![Network architecture](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/network_architecture.jpg)
 
 We use softmax_cross_entropy_with_logits to get the network error and AdamOptimizer for gradient distribution with **0.001** learning rate.
 
@@ -41,7 +41,8 @@ Unzip the dataset.zip
 
 **Accuracy:** 99.25%
 
-![example 1](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
-![example 2](https://github.com/mrvecka/VSB_ANO/blob/master/ANO/images/moon.jpg)
+![CNN example 1](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/example_convolution_1.jpg)
+
+![CNN example 2](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/example_convolution_2.jpg)
 
 
