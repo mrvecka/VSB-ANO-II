@@ -24,22 +24,24 @@ Unzip the dataset.zip
 ## Approach 2 - Classification using CNN and Tensorflow
 
 We want to classify if parking spot is occupied or not, this is like made for NN classification. The base of second solution is convolutional neural network designed in Tensorflow framework with OpenCV for image pre-process. On input there is 1(grayscale) or 3(RGB) channels input image. We designed following NN:
-
+  
+  
 ![Network architecture](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/network_architecture.jpg)
-
+  
+  
 We use softmax_cross_entropy_with_logits to get the network error and AdamOptimizer for gradient distribution with **0.001** learning rate.
 
 ### Prerequisites
-Tensorflow - 1.14.0
-Tensorflow GPU -1.12.0
-Python OpenCV - 3.4.3.18
-Numpy = 1.17.3
+Tensorflow - 1.14.0  
+Tensorflow GPU -1.12.0  
+Python OpenCV - 3.4.3.18  
+Numpy = 1.17.3  
 
 Unzip the dataset.zip
 
 ### Results
 
-**Accuracy:** 99.25%
+**Accuracy:** 99.25%  
 
 ![CNN example 1](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/example_convolution_1.jpg)
 
