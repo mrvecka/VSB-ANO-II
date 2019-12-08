@@ -42,9 +42,9 @@ Unzip the dataset.zip
 ### Results
 
 **Accuracy:** 99.25%  
-**Training time:** 6min
-**One parking lot evaluation time:**0.002min
-**One image evaluation time:**0.12min
+**Training time:** 6min  
+**One parking lot evaluation time:**0.002min  
+**One image evaluation time:**0.12min  
 
 ![CNN example 1](https://github.com/mrvecka/VSB-ANO-II/blob/master/results/example_convolution_1.jpg)
 
